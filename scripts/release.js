@@ -23,6 +23,7 @@ const distPath = path.resolve( packageRoot, 'dist' );
 
 cli.provideToken()
 	.then( token => {
+		console.log('Token: ', token);
 		const gitVersion = versionUtils.getLastTagFromGit();
 		const changelogVersion = versionUtils.getLastFromChangelog();
 
@@ -76,8 +77,8 @@ cli.provideToken()
 		} ).then( () => changelogVersion );
 	} )
 	.then( version => {
-		const url = `https://github.com/ckeditor/ckeditor5-angular/releases/tag/v${ version }`;
-		log.info( `Created the release: ${ url }` );
+		// const url = `https://github.com/ckeditor/ckeditor5-angular/releases/tag/v${ version }`;
+		log.info( `Created the release: ${ version }` );
 	} )
 	.catch( err => {
 		log.error( err.stack );
