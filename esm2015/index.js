@@ -1,0 +1,8 @@
+/**
+ * @license Copyright (c) 2003-2022, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md.
+ */
+export * from './ckeditor';
+export * from './ckeditor.component';
+export * from './ckeditor.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvY2tlZGl0b3IvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztHQUdHO0FBRUgsY0FBYyxZQUFZLENBQUM7QUFDM0IsY0FBYyxzQkFBc0IsQ0FBQztBQUNyQyxjQUFjLG1CQUFtQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXHJcbiAqIEBsaWNlbnNlIENvcHlyaWdodCAoYykgMjAwMy0yMDIyLCBDS1NvdXJjZSBIb2xkaW5nIHNwLiB6IG8uby4gQWxsIHJpZ2h0cyByZXNlcnZlZC5cclxuICogRm9yIGxpY2Vuc2luZywgc2VlIExJQ0VOU0UubWQuXHJcbiAqL1xyXG5cclxuZXhwb3J0ICogZnJvbSAnLi9ja2VkaXRvcic7XHJcbmV4cG9ydCAqIGZyb20gJy4vY2tlZGl0b3IuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9ja2VkaXRvci5tb2R1bGUnO1xyXG4iXX0=
