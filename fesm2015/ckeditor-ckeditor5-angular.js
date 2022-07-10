@@ -210,6 +210,7 @@ class CKEditorComponent {
             this.data = value;
             // If not, then wait until it is ready
             // and change data only for the first `ready` event.
+            // fix null by phucnd
             this.ready
                 .pipe(first())
                 .subscribe((editor) => {
