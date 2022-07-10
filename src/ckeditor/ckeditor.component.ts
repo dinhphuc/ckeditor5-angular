@@ -336,8 +336,9 @@ export class CKEditorComponent implements AfterViewInit, OnDestroy, ControlValue
 
 		const destructor = async ( editor: CKEditor5.Editor ) => {
 			await editor.destroy();
-
-			this.elementRef.nativeElement.removeChild( this.editorElement! );
+			if(this.elementRef &&this.elementRef.nativeElement ){
+				this.elementRef.nativeElement.removeChild( this.editorElement! );
+			}
 		};
 
 		const emitError = () => {
