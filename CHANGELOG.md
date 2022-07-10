@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## [4.0.1](https://github.com/ckeditor/ckeditor5-angular/compare/v4.0.0...v4.0.1) (2022-07-10)
+
+Internal changes only (updated dependencies, documentation, etc.).
+
+
+Changelog
+=========
+
 ## [4.0.0](https://github.com/ckeditor/ckeditor5-angular/compare/v3.0.0...v4.0.0) (2022-04-12)
 
 ### BREAKING CHANGES
