@@ -7,7 +7,7 @@ declare global {
         CKEDITOR_VERSION?: string;
     }
 }
-import { NgZone, EventEmitter, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
+import { AfterViewInit, ElementRef, EventEmitter, NgZone, OnDestroy } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { CKEditor5 } from './ckeditor';
 export interface BlurEvent {
@@ -23,10 +23,6 @@ export interface ChangeEvent {
     editor: CKEditor5.Editor;
 }
 export declare class CKEditorComponent implements AfterViewInit, OnDestroy, ControlValueAccessor {
-    /**
-     * The reference to the DOM element created by the component.
-     */
-    private elementRef;
     /**
      * The constructor of the editor to be used for the instance of the component.
      * It can be e.g. the `ClassicEditorBuild`, `InlineEditorBuild` or some custom editor.
@@ -53,13 +49,6 @@ export declare class CKEditorComponent implements AfterViewInit, OnDestroy, Cont
      * The context watchdog.
      */
     watchdog?: CKEditor5.ContextWatchdog;
-    /**
-     * When set `true`, the editor becomes read-only.
-     * See https://ckeditor.com/docs/ckeditor5/latest/api/module_core_editor_editor-Editor.html#member-isReadOnly
-     * to learn more.
-     */
-    set disabled(isDisabled: boolean);
-    get disabled(): boolean;
     /**
      * Fires when the editor is ready. It corresponds with the `editor#ready`
      * https://ckeditor.com/docs/ckeditor5/latest/api/module_core_editor_editor-Editor.html#event-ready
@@ -89,9 +78,9 @@ export declare class CKEditorComponent implements AfterViewInit, OnDestroy, Cont
      */
     error: EventEmitter<void>;
     /**
-     * The instance of the editor created by this component.
+     * The reference to the DOM element created by the component.
      */
-    get editorInstance(): CKEditor5.Editor | null;
+    private elementRef;
     /**
      * The editor watchdog. It is created when the context watchdog is not passed to the component.
      * It keeps the editor running.
@@ -131,6 +120,17 @@ export declare class CKEditorComponent implements AfterViewInit, OnDestroy, Cont
     private isEditorSettingData;
     private id;
     constructor(elementRef: ElementRef, ngZone: NgZone);
+    get disabled(): boolean;
+    /**
+     * When set `true`, the editor becomes read-only.
+     * See https://ckeditor.com/docs/ckeditor5/latest/api/module_core_editor_editor-Editor.html#member-isReadOnly
+     * to learn more.
+     */
+    set disabled(isDisabled: boolean);
+    /**
+     * The instance of the editor created by this component.
+     */
+    get editorInstance(): CKEditor5.Editor | null;
     ngAfterViewInit(): void;
     ngOnDestroy(): Promise<void>;
     writeValue(value: string | null): void;

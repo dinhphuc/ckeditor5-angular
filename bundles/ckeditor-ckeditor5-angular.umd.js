@@ -525,7 +525,7 @@
             var _this = this;
             // This method is called with the `null` value when the form resets.
             // A component's responsibility is to restore to the initial state.
-            if (value === null) {
+            if (value === null || value === undefined) {
                 value = '';
             }
             // If already initialized.
@@ -545,6 +545,9 @@
                 this.ready
                     .pipe(operators.first())
                     .subscribe(function (editor) {
+                    if (!_this.data) {
+                        _this.data = '';
+                    }
                     editor.setData(_this.data);
                 });
             }
@@ -720,12 +723,12 @@
         data: [{ type: core.Input }],
         tagName: [{ type: core.Input }],
         watchdog: [{ type: core.Input }],
-        disabled: [{ type: core.Input }],
         ready: [{ type: core.Output }],
         change: [{ type: core.Output }],
         blur: [{ type: core.Output }],
         focus: [{ type: core.Output }],
-        error: [{ type: core.Output }]
+        error: [{ type: core.Output }],
+        disabled: [{ type: core.Input }]
     };
 
     /**

@@ -143,6 +143,12 @@ class CKEditorComponent {
             console.warn('Cannot find the "CKEDITOR_VERSION" in the "window" scope.');
         }
     }
+    get disabled() {
+        if (this.editorInstance) {
+            return this.editorInstance.isReadOnly;
+        }
+        return this.initiallyDisabled;
+    }
     /**
      * When set `true`, the editor becomes read-only.
      * See https://ckeditor.com/docs/ckeditor5/latest/api/module_core_editor_editor-Editor.html#member-isReadOnly
@@ -150,12 +156,6 @@ class CKEditorComponent {
      */
     set disabled(isDisabled) {
         this.setDisabledState(isDisabled);
-    }
-    get disabled() {
-        if (this.editorInstance) {
-            return this.editorInstance.isReadOnly;
-        }
-        return this.initiallyDisabled;
     }
     /**
      * The instance of the editor created by this component.
@@ -193,7 +193,7 @@ class CKEditorComponent {
     writeValue(value) {
         // This method is called with the `null` value when the form resets.
         // A component's responsibility is to restore to the initial state.
-        if (value === null) {
+        if (value === null || value === undefined) {
             value = '';
         }
         // If already initialized.
@@ -213,6 +213,9 @@ class CKEditorComponent {
             this.ready
                 .pipe(first())
                 .subscribe((editor) => {
+                if (!this.data) {
+                    this.data = '';
+                }
                 editor.setData(this.data);
             });
         }
@@ -366,12 +369,12 @@ CKEditorComponent.propDecorators = {
     data: [{ type: Input }],
     tagName: [{ type: Input }],
     watchdog: [{ type: Input }],
-    disabled: [{ type: Input }],
     ready: [{ type: Output }],
     change: [{ type: Output }],
     blur: [{ type: Output }],
     focus: [{ type: Output }],
-    error: [{ type: Output }]
+    error: [{ type: Output }],
+    disabled: [{ type: Input }]
 };
 
 /**
