@@ -1,6 +1,6 @@
 {
   "name": "@ckeditor/ckeditor5-angular",
-  "version": "4.0.4",
+  "version": "4.0.0",
   "description": "Official Angular component for CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "wysiwyg",

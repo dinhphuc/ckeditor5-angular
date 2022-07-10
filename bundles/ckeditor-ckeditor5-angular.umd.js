@@ -610,9 +610,6 @@
                         case 0: return [4 /*yield*/, editor.destroy()];
                         case 1:
                             _a.sent();
-                            if (this.elementRef && this.elementRef.nativeElement) {
-                                this.elementRef.nativeElement.removeChild(this.editorElement);
-                            }
                             return [2 /*return*/];
                     }
                 });

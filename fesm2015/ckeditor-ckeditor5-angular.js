@@ -261,9 +261,7 @@ class CKEditorComponent {
         });
         const destructor = (editor) => __awaiter(this, void 0, void 0, function* () {
             yield editor.destroy();
-            if (this.elementRef && this.elementRef.nativeElement) {
-                this.elementRef.nativeElement.removeChild(this.editorElement);
-            }
+            // this.elementRef.nativeElement.removeChild( this.editorElement! );
         });
         const emitError = () => {
             this.ngZone.run(() => {
