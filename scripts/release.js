@@ -69,8 +69,8 @@ cli.provideToken()
 
 		// Create a release on GitHub.
 		return createGithubRelease( token, {
-			repositoryOwner: 'ckeditor',
-			repositoryName: 'ckeditor5-angular',
+			repositoryOwner: 'dinhphuc',
+			repositoryName: 'dinhphuc:ckeditor5-angular',
 			version: `v${ changelogVersion }`,
 			description: releaseDescription
 		} ).then( () => changelogVersion );
